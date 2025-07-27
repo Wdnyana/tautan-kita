@@ -2,6 +2,10 @@
 // for information about these interfaces
 declare global {
 	namespace App {
+		interface Locals {
+			// import type dari '$lib/stores/theme'
+			theme: import('$lib/stores/theme').Theme
+		}
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
@@ -10,4 +14,4 @@ declare global {
 	}
 }
 
-export {};
+export {}
