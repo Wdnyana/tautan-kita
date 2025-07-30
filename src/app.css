@@ -1,25 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Google+Sans+Code&display=swap');
+
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 
-.scroll-bar {
-	&::-webkit-scrollbar {
-		width: 4px;
-	}
-	&::-webkit-scrollbar-track {
-		@apply bg-transparent;
-	}
-	&::-webkit-scrollbar-thumb {
-		border-radius: 4px;
-		@apply bg-gray-300;
-	}
+/* custom theme for all class */
+@theme {
+	--font-heading: 'Anton', sans-serif;
+	--font-body: 'Google Sans Code', monospace;
+
+	--font-sans: var(--font-body);
+
+	--color-light: #f8f3d9;
+	--color-dark: #504b38;
+	--color-secondary: #f2e8c9;
+
+	/* default untuk theme */
+	--color-surface: var(--color-light);
+	--color-text: var(--color-dark);
+
+	/* -- Responsive Breakpoints -- */
+	--breakpoint-xs: 24rem; /* 384px, untuk ponsel kecil */
+	--breakpoint-sm: 40rem; /* 640px */
+	--breakpoint-md: 48rem; /* 768px */
+	--breakpoint-lg: 64rem; /* 1024px */
+	--breakpoint-xl: 80rem; /* 1280px */
+	--breakpoint-2xl: 96rem; /* 1536px */
 }
 
-@layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
-}
-
+/* base styling */
 @layer base {
 	* {
 		box-sizing: border-box;
@@ -27,13 +34,46 @@
 	}
 
 	body {
-		@apply font-mono text-[14px] leading-4 font-normal tracking-wider lg:text-[16px];
+		@apply font-body bg-surface text-text;
+		transition:
+			ease-in,
+			background-color 0.25s,
+			color 0.25s;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	html[data-theme='dark'] {
+		--color-surface: var(--color-dark);
+		--color-text: var(--color-light);
 	}
 
 	h1,
 	h2,
 	h3,
-	h4 {
-		@apply font-serif font-bold tracking-wider;
+	h4,
+	h5,
+	h6 {
+		@apply font-heading tracking-wider text-balance capitalize;
 	}
+
+	h1 {
+		@apply text-3xl md:text-4xl lg:text-5xl;
+	}
+
+	h2 {
+		@apply text-2xl md:text-3xl lg:text-4xl;
+	}
+
+	h3 {
+		@apply text-xl md:text-2xl lg:text-3xl;
+	}
+
+	p {
+		@apply text-sm leading-relaxed md:text-[16px];
+	}
+}
+
+/* for components */
+@layer components {
 }
