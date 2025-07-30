@@ -1,7 +1,5 @@
 import { type Types } from '$lib'
 
-import { Github, Instagram, Linkedin, Globe } from '@lucide/svelte'
-
 export async function load(): Promise<Types.typesProfile.PageData> {
 	const dataProfile: Types.typesProfile.ProfileData = {
 		nama: '<h1>I Putu Purwa Wiadnyana Putra</h1>',
@@ -14,27 +12,31 @@ export async function load(): Promise<Types.typesProfile.PageData> {
 	const socialIconLink: Types.typesProfile.SocialLink[] = [
 		{
 			title: 'Github',
-			description: '',
+			description:
+				'Explore my repositories, see the code behind each project, and discover how I solve problems.',
 			url: 'https://github.com/Wdnyana',
-			icon: Github,
+			img: 'https://t4.ftcdn.net/jpg/03/85/94/91/360_F_385949189_W1ydL4Z3c6Uy2OfB9rZNdbxVaIMOs16F.jpg',
 		},
 		{
 			title: 'Linkedin',
-			description: '',
+			description:
+				'Connect with me professionally, view my career journey and expertise, and lets discuss opportunities for collaboration.',
 			url: 'https://www.linkedin.com/feed/',
-			icon: Linkedin,
+			img: 'https://brand.linkedin.com/etc.clientlibs/settings/wcm/designs/gandalf/clientlibs/resources/images/og-social-share-image.jpg',
 		},
 		{
 			title: 'Instagram',
-			description: '',
+			description:
+				'I share my learning journey through content, code snippets, and of course, coffee.',
 			url: 'https://www.instagram.com/codevo.dev/',
-			icon: Instagram,
+			img: 'https://www.inserthere.me/sites/default/files/instagram.jpg',
 		},
 		{
 			title: 'Website Portfolio',
-			description: '',
+			description:
+				'My curated projects. View case studies on how I transform ideas into tangible digital solutions.',
 			url: 'https://purwa-widnyana.vercel.app/',
-			icon: Globe,
+			img: '/src/lib/assets/portfolio.png',
 		},
 	]
 

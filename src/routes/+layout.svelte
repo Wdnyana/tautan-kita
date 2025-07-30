@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { type LayoutData } from './$types'
-
 	import '../app.css'
 
 	import Navbar from '$lib/components/layouts/Navbar.svelte'
@@ -10,6 +8,7 @@
 	import ToggleTheme from '$lib/components/button/ToggleTheme.svelte'
 	import type { Snippet } from 'svelte'
 	import type { NavbarLink } from '$lib/types/profile.types'
+	import Footer from '$lib/components/layouts/Footer.svelte'
 
 	let { children, data }: { children: Snippet; data: { theme: Theme; nav: NavbarLink[] } } =
 		$props()
@@ -42,7 +41,11 @@
 			</a>
 
 			<!-- navbar mobile -->
-			<div class="flex lg:hidden">
+			<div class="flex items-center gap-2 md:gap-3 lg:hidden">
+				<div class="relative top-0.5 z-[11]">
+					<ToggleTheme />
+				</div>
+
 				<button
 					onclick={handleMenu}
 					type="button"
@@ -56,7 +59,7 @@
 				</button>
 
 				{#if openMenu}
-					<div class="fixed inset-1 rounded-[8px] bg-green-200 text-orange-800">
+					<div class="bg-surface text-text fixed inset-1 rounded-[8px]">
 						<div class="flex h-full w-full flex-col items-center justify-center gap-10">
 							{#each data.nav as navs (navs.url)}
 								<Navbar
@@ -92,6 +95,6 @@
 	</main>
 
 	<footer class=" px-3 py-10 lg:px-6">
-		<h1 class="text-center">Footer Tautan kita © 2025.</h1>
+		<Footer />
 	</footer>
 </div>

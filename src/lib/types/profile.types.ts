@@ -10,7 +10,7 @@ export interface SocialLink {
 	title: string
 	description: string
 	url: string
-	icon: any
+	img: string
 }
 // for navbar link
 export interface NavbarLink {

@@ -7,10 +7,10 @@
 	}
 </script>
 
-<button onclick={handleToggleTheme} aria-label="Toggle theme">
+<button class="cursor-pointer" onclick={handleToggleTheme} aria-label="Toggle theme">
 	{#if $theme === 'dark'}
-		<Moon class="h-6 w-6" />
+		<Moon class="h-5 w-5 lg:h-6 lg:w-6" />
 	{:else}
-		<Sun class="h-6 w-6" />
+		<Sun class="h-5 w-5 lg:h-6 lg:w-6" />
 	{/if}
 </button>

@@ -12,8 +12,8 @@
 	<a
 		class="rounded-[7px] px-4 py-2 text-center transition-colors duration-200 lg:px-6"
 		href={url}
-		class:bg-green-100={active}
-		class:text-green-700={active}
+		class:bg-text={active}
+		class:text-surface={active}
 		class:font-medium={active}>{title}</a
 	>
 </button>

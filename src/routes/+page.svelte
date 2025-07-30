@@ -16,7 +16,23 @@
 	/>
 </section>
 
-<section id="tautan" class="container mx-auto h-screen px-3 lg:px-6"><CardLinkSection /></section>
+<section
+	id="tautan"
+	class="container mx-auto flex max-h-full items-center px-3 lg:px-6 xl:h-[50vh]"
+>
+	<div
+		class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:items-center xl:justify-center"
+	>
+		{#each data.socialLink as social}
+			<CardLinkSection
+				title={social.title}
+				description={social.description}
+				url={social.url}
+				img={social.img}
+			/>
+		{/each}
+	</div>
+</section>
 
 <section id="contact" class="container mx-auto h-screen px-3 lg:px-6">
 	<CallActionSection />
